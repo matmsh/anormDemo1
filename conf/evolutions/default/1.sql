@@ -1,12 +1,17 @@
 
 # --- !Ups
+set ignorecase true;
 
-CREATE TABLE MOTORCYCLES ( 
+CREATE TABLE motorcycles ( 
+    id  bigint not null,
     make varchar,
     model varchar,
-    enginecapacity int);
+    enginecapacity int,
+    constraint pk_motorcycle primary key (id));
+    
+create sequence motorcycles_seq start with 1000;
     
 # --- !Downs
-DROP TABLE IF EXISTS MOTORCYCLES; 
+DROP TABLE IF EXISTS motorcycles; 
 
 

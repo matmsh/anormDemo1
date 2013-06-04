@@ -17,3 +17,12 @@ span.error {
 	display:block;
 	font-weight:bold;
 }
+
+table.bikeTable{
+	width:50em;
+}
+
+td.title {
+	font-weight:bold;
+	
+}
