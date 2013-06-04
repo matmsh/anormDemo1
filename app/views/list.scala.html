@@ -1,0 +1,32 @@
+@(motorcycles: List[Motorcycle])
+
+@main("Motorcycles:View") {
+
+  <a href="new">Add Motorcycle</a>
+  <br/>
+  <br/>
+
+  @if(motorcycles.isEmpty) {
+     <h2>No Bikes.</h2>
+  } else {
+      
+      <table border="1" style="width:40em">
+       <tr> 
+             <td> Make</td>
+             <td> Model </td>
+             <td> Capacity cc </td>
+       </tr>
+       
+           
+      @for(bike <- motorcycles) {
+            <tr> 
+             <td> @bike.make</td>
+             <td> @bike.model </td>
+             <td> @bike.engineCapacity </td>
+           </tr> 
+      }
+      
+       </table>
+  } 
+   
+}

@@ -1,0 +1,19 @@
+label {
+	color: blue;
+	font-weight:bold;
+}
+
+dd.info {
+	color: green;
+}
+
+dd.error {
+	color: red;
+}
+
+span.error {
+	background-color:red;
+	color:white;
+	display:block;
+	font-weight:bold;
+}
