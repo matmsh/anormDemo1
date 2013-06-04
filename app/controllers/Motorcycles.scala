@@ -63,7 +63,8 @@ object Motorcycles extends Controller{
       implicit request =>
        val motorcycleOption = Motorcycle.findById(id)
         val bike = motorcycleForm.fill(motorcycleOption.get) 
-         Ok(views.html.edit(bike)).withSession( session + ("motorcycleId" -> id.toString))
+         // Put id of selected motorcycle in session. 
+        Ok(views.html.edit(bike)).withSession( session + ("motorcycleId" -> id.toString))
    }
    
    def update =  Action {
@@ -73,8 +74,10 @@ object Motorcycles extends Controller{
           hasErrors = {formWithError =>
                      Ok(views.html.edit(formWithError)) },     
                      
-          success = {  motorcycle => { val id = session.get("motorcycleId").get.toLong
+          success = {  motorcycle => { val id = session.get("motorcycleId").get.toLong;
                                        Motorcycle.update(id,motorcycle);
+                                       // Remove id from session. 
+                                       session - "id";
                                        Redirect(routes.Motorcycles.list) }
           }
        )           
