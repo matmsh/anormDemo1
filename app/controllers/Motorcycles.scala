@@ -48,7 +48,7 @@ object Motorcycles extends Controller{
   private def validateCreate(motorcycle: Motorcycle): Result = {
     // When adding a new motorcycle, it must not already exists in the db.     
     if (exists(motorcycle)) {
-      val newErrorForm = motorcycleForm.fill(motorcycle).withGlobalError("Make and model already exists.")
+      val newErrorForm = motorcycleForm.fill(motorcycle).withGlobalError("Make and model already exist.")
       Ok(views.html.add(newErrorForm))
 
     } else {
