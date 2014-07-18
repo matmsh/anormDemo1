@@ -1,8 +1,19 @@
-A simple Play 2.1 (Scala) CRUD application using Anorm and in memory db H2. 
+A simple Play 2.1 (Scala) CRUD application using Anorm and Postgres. 
 
-The url of the application is http://localhost:9000/
+The db create table script is in etc/createTables.sql. 
+
+In application.conf, the db url, userid and password needs to be set :
+
+For example :
+db.default.user=user
+db.default.password=qwerty
+db.default.url="jdbc:postgresql:playdb"
+db.default.driver=org.postgresql.Driver
+
+Also need to disbale evolution:
+evolutionplugin=disabled
 
 
+The context url of the application is http://localhost:9000/anormdemo1/  
 
-Online demo :
-http://lombok.demon.co.uk/anormdemo1/
+

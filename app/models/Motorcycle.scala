@@ -30,7 +30,7 @@ object Motorcycle {
       SQL("""insert
             into motorcycles
             values (
-            (select next value for motorcycles_seq), 
+            (select nextval('motorcycles_seq')), 
             {make}, {model}, {engineCapacity})""").on(
         "make" -> motorcycle.make,
         "model" -> motorcycle.model,
